@@ -2,70 +2,54 @@
 
 int main() {
 
-    int opcao, i;
+    int i, cavalo;
 
-    // todo programa dentro do "do-while" para criar um looping onde o jogador sempre escolhe uma peça, até querer sair do jogo.
-    do{
+        // Movimentação da Torre em do-while
+        printf("\nTORRE!\n");
+        
+        i = 1; // Inicializando o valor de i
+        do{
+            printf("Direita\n");
+            i++;
 
-    // Exibindo menu de seleção da peça.
-    printf("\n** MOVIMENTAÇÃO DAS PEÇAS DE XADREZ **\n");
-    printf("# Escolha uma opção. #\n");
-    printf("\n1. Para Torre.\n");
-    printf("2. Para Bispo.\n");
-    printf("3. Para Rainha.\n");
-    printf("Digite qualquer outro número ara sair do jogo.\n");
-    printf("\nOpção escolhida: ");
-    scanf("%d", &opcao);
+        }while (i <= 5);
 
-    // Estrutura criada dentro do "switch" para dar suporte às escolhas do usuário.
-    switch (opcao){
+        // Movimentação do Bispo em while
+        printf("\nBISPO!\n");
 
-        // Case 1 para a escolha da TORRE, utilizando do-while.
-        case 1:
+        i = 1; // Inicializando o valor de i
+        while (i <= 5){
+            
+            printf("Direita, Cima\n");
+            i++;
+        }
 
-            i = 1;
+        //Movimentação da Rainha em for
+        printf("\nRAINHA!\n");
 
-            printf("\nVocê escolheu TORRE!\n");
-
-            do{
-                printf("Direita\n");
-                i++;
-
-            }while (i <= 5);
-
-        break;
-
-        // Case 2 para a esolha do BISPO, utilizando o while.
-        case 2:
-
-            i = 1;
-
-            printf("\nVocê escolheu BISPO!\n");
-
-            while (i <= 5){
-
-                printf("Direita, Cima\n");
-                i++;
-            }
-        break;
-
-        // Case 3 para a escolha da RAINHA, utilizando o for.
-        case 3:
-
-        printf("\nVocê escolheu RAINHA!\n");
-
-        for (int i = 1; i <= 8; i++)
+        for (i = 1; i <= 8; i++)
 
             printf("Esquerda\n");
+
+        // Movimentação do Cavalo com loop aninhado while e for        
+        printf("\nCAVALO!\n");
+
+        cavalo = 1; // Inicializando o valor do cavalo
+
+        while (cavalo > 0){
+
+            for (int i = 1; i <= 2; i++){
+
+                printf("Baixo\n");
+
+            }
+
+        cavalo--; // Decrementa o valo do cavalo
         
-        break;
-       
-    }
-
-  // Finalizando a estrutura principal de "do-while", com a escolha de um número > 3 ou <= 0 para sair do jogo.  
-} while (opcao <= 3 && opcao > 0);
-
-    printf("Saindo do jogo...\n");
+        }
+        printf("Esquerda\n");
+          
+        printf("\n");
 
     return 0;
 }
