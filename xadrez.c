@@ -1,8 +1,59 @@
 #include <stdio.h>
 
+void movimentaçãoTorre (int numeroTorre){
+
+    if (numeroTorre > 0){
+        printf("Direita\n");
+
+        movimentaçãoTorre (numeroTorre - 1);
+    }
+
+}
+
+void movimentacaoBispo (int numeroBispo1, int numeroBispo2){;
+
+   if (numeroBispo1 >0 ){
+        printf("Cima, ");
+
+        if (numeroBispo2 > 0){
+            printf("Direita\n");
+
+            movimentacaoBispo (numeroBispo1 - 1, numeroBispo2 - 1);
+        }
+   }
+}
+
+void movimentaçãoRainha (int numeroRainha){
+
+    if (numeroRainha > 0){
+        printf("Esquerda\n");
+
+        movimentaçãoRainha (numeroRainha - 1);
+    }
+
+}
+
 int main() {
 
-    int i, cavalo;
+    int casasTorre = 5;
+    printf("MOVIMENTAÇÃO DA TORRE!\n");
+    movimentaçãoTorre (casasTorre);
+
+
+    int casasBispo = 5;
+    printf("\nMOVIMENTAÇÃO DO BISPO!\n");
+    movimentacaoBispo (casasBispo, casasBispo);
+    
+
+    int casasRainha = 8;
+    printf("\nMOVIMENTAÇÃO DA RAINHA!\n");
+    movimentaçãoRainha (casasRainha);
+
+
+
+
+
+    /*int i, cavalo;
 
         // Movimentação da Torre em do-while
         printf("\nTORRE!\n");
@@ -49,7 +100,7 @@ int main() {
         }
         printf("Esquerda\n");
           
-        printf("\n");
+        printf("\n");*/
 
     return 0;
 }
